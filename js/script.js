@@ -17,7 +17,7 @@ function addCards()  {
         <div class="card-container">
         <div class="card">
             <div class="card-back">
-                <img src="/img/back.png" alt="">
+                <img src="img/back.png" alt="">
             </div>
             <div class="card-front">
             <img src="${Parrots[count]}" alt="">
