@@ -6,19 +6,15 @@ const parrots = [
     "img/revertitparrot.gif",
     "img/tripletsparrot.gif",
     "img/unicornparrot.gif",
-    "img/bobrossparrot.gif",
-    "img/explodyparrot.gif",
-    "img/fiestaparrot.gif",
-    "img/metalparrot.gif",
-    "img/revertitparrot.gif",
-    "img/tripletsparrot.gif",
-    "img/unicornparrot.gif",
 ];
 
 
 function setupGameBoard() {
     const cardNumber = prompt("Selecione o número de cartas! (Somente pares, entre 4-14)");
     const gameBoard = document.querySelector(".game-container");
+    const x = (cardNumber/2);
+    const newParrots = parrots.slice(0,x).concat(parrots.slice(0,x));
+    const randomParrots = newParrots.sort(() => Math.random() - 0.5);
 
     if(cardNumber < 4 || cardNumber > 14 || cardNumber % 2 !== 0) {
         alert("O número inserido é inválido! Escolha novamente");
@@ -34,7 +30,7 @@ function setupGameBoard() {
                         <img src="img/back.png" alt="">
                     </div>
                     <div class="card-front">
-                        <img src="${parrots[i]}" alt="">
+                        <img src="${randomParrots[i]}" alt="">
                     </div>
                 </div>
             </div>
@@ -103,5 +99,5 @@ function shuffleCards() {
     })
 }*/
 
-shuffleCards();
+shuffleCards()
 setupGameBoard();
