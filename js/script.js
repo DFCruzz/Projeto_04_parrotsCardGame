@@ -16,7 +16,7 @@ function endGame() {
         console.log(endGameArray)
     }
     else {
-        setTimeout(() => alert("You've Won the Game in " + plays + " plays!"), 1000)
+        setTimeout(() => alert("Você ganhou em " + plays + " jogadas!"), 1000)
         setTimeout(() => window.location.reload(), 2000)
     }
 }
