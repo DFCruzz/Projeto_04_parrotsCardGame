@@ -56,13 +56,14 @@ body {
 
 .flip-card {
     transform: rotateY(180deg);
+    pointer-events: none;
 }
 
 .card {
     width: 100%;
     height: 100%;
     position: relative;
-    transition: 0.4s;
+    transition: 0.6s;
     background-color: #a7e9af;
     border: 1px solid #99cea8;
     border-radius: 5px;
@@ -81,8 +82,159 @@ body {
     align-items: center;
     justify-content: center;
     backface-visibility: hidden;
+    pointer-events: none;
 }
 
 .card-front {
     transform: rotateY(180deg);
 }
+
+@media (max-width: 1210px) {
+    .game-container {
+        width: 900px;
+    }
+    
+    .board4 {
+        width: 380px;
+    }
+    
+    .board6 {
+        width: 550px;
+    }
+    
+    .board8 {
+        width: 730px;
+    }
+    
+    .board10 {
+        width: 900px;
+    }
+    
+    .board12 {
+        width: 900px;
+    }
+}
+
+
+@media (max-width: 875px) {
+    .game-container {
+        width: 730px;
+    }
+    
+    .board4 {
+        width: 380px;
+    }
+    
+    .board6 {
+        width: 550px;
+    }
+    
+    .board8 {
+        width: 730px;
+    }
+    
+    .board10 {
+        width: 730px;
+    }
+    
+    .board12 {
+        width: 730px;
+    }
+}
+
+
+@media (max-width: 700px) {
+    .title {
+        font-size: 48px;
+        width: 500px;
+    }    
+
+    .game-container {
+        width: 550px;
+    }
+    
+    .board4 {
+        width: 380px;
+    }
+    
+    .board6 {
+        width: 550px;
+    }
+    
+    .board8 {
+        width: 550px;
+    }
+    
+    .board10 {
+        width: 550px;
+    }
+    
+    .board12 {
+        width: 550px;
+    }
+}
+
+
+@media (max-width: 540px) {
+    .title {
+        font-size: 48px;
+        width: 380px;
+    }    
+
+    .game-container {
+        width: 480px;
+    }
+
+    .board4 {
+        width: 480px;
+    }
+    
+    .board6 {
+        width: 480px;
+    }
+    
+    .board8 {
+        width: 480px;
+    }
+    
+    .board10 {
+        width: 480px;
+    }
+    
+    .board12 {
+        width: 480px;
+    }
+}
+
+@media (max-width: 380px) {
+    .title {
+        font-size: 40px;
+        width: 380px;
+    }    
+
+    
+    .game-container {
+        width: 340px;
+    }
+
+    .board4 {
+        width: 340px;
+    }
+    
+    .board6 {
+        width: 340px;
+    }
+    
+    .board8 {
+        width: 340px;
+    }
+    
+    .board10 {
+        width: 340px;
+    }
+    
+    .board12 {
+        width: 340px;
+    }
+}
+

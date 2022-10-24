@@ -7,6 +7,19 @@ const parrots = [
     {name: "unicorn", imgSrc: "img/unicornparrot.gif" },
     {name: "revertit", imgSrc: "img/revertitparrot.gif" }
 ];
+let plays = 0;
+
+function endGame() {
+    const endGameArray = document.querySelectorAll(".card:not(.flip-card)");
+
+    if(endGameArray.length !== 0) {
+        console.log(endGameArray)
+    }
+    else {
+        setTimeout(() => alert("You've Won the Game in " + plays + " plays!"), 1000)
+        setTimeout(() => window.location.reload(), 2000)
+    }
+}
 
 
 function startGame() {
@@ -62,15 +75,38 @@ function flipCard() {
     const cards = document.querySelectorAll(".card");
     cards.forEach((card) => {
         card.addEventListener("click", () => {
-            card.classList.toggle("flip-card");
+            card.classList.toggle("flip-card")
+            card.classList.add("flipped")
+            plays++;
+            checkCards()
+            endGame()
         })
     })
+    
 };
+
+function checkCards() {;
+    const flippedCards = document.querySelectorAll(".flipped");
+
+    if(flippedCards.length === 2) {
+        if(flippedCards[0].getAttribute("name") === flippedCards[1].getAttribute("name")) {
+            console.log("correct")
+            flippedCards.forEach((flippedCard) => {
+                flippedCard.classList.remove("flipped");                
+            })
+        }
+        else {
+            console.log("incorrect")
+            flippedCards.forEach((flippedCard) => {
+                flippedCard.classList.remove("flipped");
+                setTimeout(() => flippedCard.classList.remove("flip-card"), 600);            })
+        }
+    }
+}
 
 function shuffleCards() {
     const randomParrots = parrots.sort(() => Math.random() - 0.5);
     return randomParrots
 }
-
 shuffleCards()
 startGame();
